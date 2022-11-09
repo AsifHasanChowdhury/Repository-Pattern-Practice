@@ -12,6 +12,6 @@
 
         public int productCount { get; set; }
 
-        public List <Product_Table> ProductList { get; set; }
+       // public List <Product_Table> ProductList { get; set; }
     }
 }

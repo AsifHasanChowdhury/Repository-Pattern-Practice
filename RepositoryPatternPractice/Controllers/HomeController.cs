@@ -17,21 +17,22 @@ namespace RepositoryPatternPractice.Controllers
             _logger = logger;
 
             this._productRepository = new ProductRepository(configuration);
-
         }
 
  
         public IActionResult Index()
+
         {
             return View(_productRepository.GetProducts());
         }
 
+        //GET CREATE
         public IActionResult Create()
         {
             return View(new Product_Table());
         }
 
-
+        //Post CREATE
         [HttpPost]
         public IActionResult Create(Product_Table product)
         {
@@ -39,12 +40,13 @@ namespace RepositoryPatternPractice.Controllers
             return RedirectToAction("Index");
         }
 
+        //Get Update
         public IActionResult Update(int Id)
         {
             return View(_productRepository.GetProductById(Id));
         }
 
-
+        //Post Update
         [HttpPost]
         public IActionResult Update(Product_Table product)
         {
