@@ -9,7 +9,7 @@ namespace RepositoryPatternPractice.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private IProductRepository _productRepository;
+        private IUsersRepository _productRepository;
 
 
         public HomeController(ILogger<HomeController> logger, IConfiguration configuration)

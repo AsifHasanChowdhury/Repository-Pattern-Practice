@@ -1,6 +1,6 @@
 ﻿namespace RepositoryPatternPractice.Models.Data_Access_Layer
 {
-    public interface IProductRepository
+    public interface IUsersRepository
     {
 
         //CREATE

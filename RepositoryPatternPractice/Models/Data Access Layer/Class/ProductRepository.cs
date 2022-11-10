@@ -12,7 +12,7 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
 {
-    public class ProductRepository : IProductRepository
+    public class ProductRepository : IUsersRepository
     {
         private readonly IConfiguration Configuration;//connection Interface
 
