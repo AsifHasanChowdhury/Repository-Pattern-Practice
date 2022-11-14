@@ -9,7 +9,7 @@ namespace RepositoryPatternPractice.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private IUsersRepository _productRepository;
+        private IProductRepository _productRepository;
 
 
         public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
@@ -26,6 +26,8 @@ namespace RepositoryPatternPractice.Controllers
             return View(_productRepository.GetProducts());
         }
 
+
+
         //GET CREATE
         public IActionResult Create()
         {
@@ -39,6 +41,8 @@ namespace RepositoryPatternPractice.Controllers
             _productRepository.InsertProduct(product);
             return RedirectToAction("Index");
         }
+
+
 
         //Get Update
         public IActionResult Update(int Id)
@@ -55,11 +59,19 @@ namespace RepositoryPatternPractice.Controllers
             return RedirectToAction("Index");
         }
 
-
+        //DELETE
         public IActionResult Delete(int Id)
         {
             _productRepository.DeleteProduct(Id);
            // _productRepository.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+        public IActionResult GetProductHistory(int id)
+        {
+            //   return View(_productRepository.GetProductHistorybyId(id));
+            _productRepository.GetProductHistorybyId(id);
             return RedirectToAction("Index");
         }
 

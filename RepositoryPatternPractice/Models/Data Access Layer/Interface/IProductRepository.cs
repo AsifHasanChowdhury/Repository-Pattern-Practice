@@ -1,6 +1,6 @@
 ﻿namespace RepositoryPatternPractice.Models.Data_Access_Layer
 {
-    public interface IUsersRepository
+    public interface IProductRepository
     {
 
         //CREATE
@@ -16,7 +16,12 @@
 
         //DELETE
         void DeleteProduct(int ProductId);
-      
+
+
+        Product_Table GetProductHistorybyId(int ProductId);
+
+
+
 
     }
 }

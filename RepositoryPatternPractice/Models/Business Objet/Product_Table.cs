@@ -1,4 +1,6 @@
-﻿namespace RepositoryPatternPractice.Models
+﻿using RepositoryPatternPractice.Models.Business_Objet;
+
+namespace RepositoryPatternPractice.Models
 {
     public class Product_Table
     {
@@ -12,6 +14,8 @@
 
         public int productCount { get; set; }
 
-       // public List <Product_Table> ProductList { get; set; }
+        // public List <String> PriceHistory=new List<String>();
+
+        public List<String> ProductHistory=new List<String>();
     }
 }

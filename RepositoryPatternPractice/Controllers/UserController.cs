@@ -6,7 +6,7 @@ namespace RepositoryPatternPractice.Controllers
     public class UserController : Controller
     {
 
-        private IUsersRepository _UsersRepository;
+       // private IUsersRepository _UsersRepository;
         
         public UserController(IConfiguration configuration)
         {

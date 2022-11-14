@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
 using Microsoft.Data.SqlClient;
 using NuGet.Protocol.Plugins;
+using RepositoryPatternPractice.Models.Business_Objet;
 using System.Collections.Generic;
 using System.Data;
 using System.Net.Mail;
@@ -12,11 +13,13 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
 {
-    public class ProductRepository : IUsersRepository
+    public class ProductRepository : IProductRepository
     {
         private readonly IConfiguration Configuration;//connection Interface
 
+        Product_Table product = new Product_Table();
 
+        List<String> PriceHistoryList = new List<String>();
 
         public ProductRepository(IConfiguration config)
         {
@@ -57,7 +60,7 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
         public Product_Table GetProductById(int ProductId)
         {
 
-            Product_Table product = new Product_Table();
+         //   Product_Table product = new Product_Table();
 
             try
             {
@@ -137,7 +140,12 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
                         
 
                     }
+                    if (PriceHistoryList.Count > 0)
 
+                    {
+                        var count = PriceHistoryList.Count;
+                        product.ProductHistory = PriceHistoryList;
+                    }
                 }
                 connection.Close();
             }
@@ -208,6 +216,70 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
            }
 
         }
+
+
+
+        public Product_Table GetProductHistorybyId(int ProductId)
+        {
+
+            //    Product_Table product = new Product_Table();
+            
+
+            List<ProductHistory> productHistorylist = new List<ProductHistory>();
+
+            try
+            {
+                SqlConnection connection = new SqlConnection(Configuration
+                    .GetConnectionString("DefaultConnection").ToString());
+
+                connection.Open();
+
+                string loadInforamtion = "SELECT ProductName, productPrice, productCompany, Price_History From Product_Table right join History_Table ON History_Table.ProductId = Product_Table.id Where Product_Table.id = " + ProductId;
+                SqlCommand comm = new SqlCommand(loadInforamtion, connection);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(comm);
+                DataTable dt = new DataTable();
+                sqlDataAdapter.Fill(dt);
+
+
+
+                if (dt.Rows.Count > 0)
+                {
+                    // product.productName = Convert.ToString(dt.Rows["productName"]);
+                    //  product.productPrice = Convert.ToInt32(dt.Rows["productPrice"]);
+                    //  product.productCompany = Convert.ToString(dt.Rows["productCompany"]);
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+
+                        ProductHistory productHistory = new ProductHistory();
+
+                        //product.productName = Convert.ToString(dt.Rows[i]["productName"]);
+                        //product.productPrice = Convert.ToInt32(dt.Rows[i]["productPrice"]);
+                        //product.productCompany = Convert.ToString(dt.Rows[i]["productCompany"]);
+
+                        productHistory.PriceHistory = Convert.ToString(dt.Rows[i]["Price_History"]);
+
+                        //product.PriceHistory.Add(productHistory.PriceHistory);
+                        PriceHistoryList.Add(productHistory.PriceHistory);
+
+
+
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            return product;
+
+
+        }
+
+
+
+
 
     }
 }

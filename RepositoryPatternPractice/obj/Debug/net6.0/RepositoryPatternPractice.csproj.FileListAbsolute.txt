@@ -1,11 +1,13 @@
+D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\RepositoryPatternPractice.dll
+D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
+D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\appsettings.Development.json
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\appsettings.json
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\RepositoryPatternPractice.staticwebassets.runtime.json
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\RepositoryPatternPractice.exe
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\RepositoryPatternPractice.deps.json
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\RepositoryPatternPractice.runtimeconfig.json
-D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\RepositoryPatternPractice.dll
-D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\RepositoryPatternPractice.pdb
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\Humanizer.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\MessagePack.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\MessagePack.Annotations.dll
@@ -30,7 +32,6 @@ D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.Features.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll
-D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\Microsoft.CodeAnalysis.Workspaces.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\Microsoft.DiaSymReader.dll
@@ -190,7 +191,6 @@ D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
@@ -239,7 +239,6 @@ D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
@@ -270,4 +269,5 @@ D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\obj\Debug\net6
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\obj\Debug\net6.0\refint\RepositoryPatternPractice.dll
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\obj\Debug\net6.0\RepositoryPatternPractice.pdb
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\obj\Debug\net6.0\RepositoryPatternPractice.genruntimeconfig.cache
+D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\bin\Debug\net6.0\RepositoryPatternPractice.pdb
 D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\obj\Debug\net6.0\ref\RepositoryPatternPractice.dll
