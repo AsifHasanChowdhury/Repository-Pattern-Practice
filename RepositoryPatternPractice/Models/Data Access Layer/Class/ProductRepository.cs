@@ -17,9 +17,15 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
     {
         private readonly IConfiguration Configuration;//connection Interface
 
-        Product_Table product = new Product_Table();
+      //  Product_Table product = new Product_Table();
 
         List<String> PriceHistoryList = new List<String>();
+
+        // List<String> PriceHistoryList2 = new List<String> { "2000", "4000"};
+        // List<int> PriceHistroyIDTrack = new List<int>();
+        // List<Tuple<string, int>> PriceHistorylist = new List<Tuple<string, int>>();
+
+        int Checkid = 0;
 
         public ProductRepository(IConfiguration config)
         {
@@ -35,9 +41,9 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
                 
                 connection.Open();
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO [Product_Table] VALUES(@productName,@productCompany," +
+                SqlCommand cmd = new SqlCommand("INSERT INTO [Product_Table] VALUES(@productName,@productPrice," +
 
-                                                                        "@productPrice,@productCount)", connection);
+                                                                        "@productCompany,@productCount)", connection);
 
                 cmd.Parameters.AddWithValue("@productName", product_.productName);
                 cmd.Parameters.AddWithValue("@productCompany", product_.productCompany);
@@ -60,7 +66,7 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
         public Product_Table GetProductById(int ProductId)
         {
 
-         //   Product_Table product = new Product_Table();
+            Product_Table product = new Product_Table();
 
             try
             {
@@ -84,7 +90,7 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
                     {
                         product.Id = Convert.ToInt32(dt.Rows[i]["id"]);
                         product.productName = Convert.ToString(dt.Rows[i]["productName"]);
-                        product.productPrice = Convert.ToInt32(dt.Rows[i]["productPrice"]);
+                        product.productPrice = Convert.ToDouble(dt.Rows[i]["productPrice"]);
                         product.productCompany = Convert.ToString(dt.Rows[i]["productCompany"]);
                         product.productCount = Convert.ToInt32(dt.Rows[i]["productCount"]);
 
@@ -132,20 +138,20 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
 
                         product.Id = Convert.ToInt32(dt.Rows[i]["id"]);
                         product.productName = Convert.ToString(dt.Rows[i]["productName"]);
-                        product.productPrice = Convert.ToInt32(dt.Rows[i]["productPrice"]);
+                        product.productPrice = Convert.ToDouble(dt.Rows[i]["productPrice"]);
                         product.productCompany = Convert.ToString(dt.Rows[i]["productCompany"]);
                         product.productCount = Convert.ToInt32(dt.Rows[i]["productCount"]);
+                       //product.PriceHistory = PriceHistoryList2;
+                        if (product.Id == Checkid)
+                        {
+                            product.PriceHistory = PriceHistoryList;
+                        }
 
                         productlist.Add(product);
                         
 
                     }
-                    if (PriceHistoryList.Count > 0)
-
-                    {
-                        var count = PriceHistoryList.Count;
-                        product.ProductHistory = PriceHistoryList;
-                    }
+                    
                 }
                 connection.Close();
             }
@@ -222,10 +228,11 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
         public Product_Table GetProductHistorybyId(int ProductId)
         {
 
-            //    Product_Table product = new Product_Table();
-            
+            Product_Table product = new Product_Table();
 
-            List<ProductHistory> productHistorylist = new List<ProductHistory>();
+           
+
+            //List<ProductHistory> productHistorylist = new List<ProductHistory>();
 
             try
             {
@@ -234,7 +241,7 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
 
                 connection.Open();
 
-                string loadInforamtion = "SELECT ProductName, productPrice, productCompany, Price_History From Product_Table right join History_Table ON History_Table.ProductId = Product_Table.id Where Product_Table.id = " + ProductId;
+                string loadInforamtion = "SELECT PriceHistory, ProductId From Product_Table right join ProductHistory ON ProductHistory.ProductId = Product_Table.id Where Product_Table.id = " + ProductId;
                 SqlCommand comm = new SqlCommand(loadInforamtion, connection);
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(comm);
                 DataTable dt = new DataTable();
@@ -244,6 +251,7 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
 
                 if (dt.Rows.Count > 0)
                 {
+                    Checkid = ProductId;
                     // product.productName = Convert.ToString(dt.Rows["productName"]);
                     //  product.productPrice = Convert.ToInt32(dt.Rows["productPrice"]);
                     //  product.productCompany = Convert.ToString(dt.Rows["productCompany"]);
@@ -257,10 +265,14 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
                         //product.productPrice = Convert.ToInt32(dt.Rows[i]["productPrice"]);
                         //product.productCompany = Convert.ToString(dt.Rows[i]["productCompany"]);
 
-                        productHistory.PriceHistory = Convert.ToString(dt.Rows[i]["Price_History"]);
+                        productHistory.PriceHistory = Convert.ToString(dt.Rows[i]["PriceHistory"]);
+                        product.Id = Convert.ToInt32(dt.Rows[i]["ProductId"]);
 
                         //product.PriceHistory.Add(productHistory.PriceHistory);
                         PriceHistoryList.Add(productHistory.PriceHistory);
+                       // PriceHistroyIDTrack.Add(product.Id);
+                        
+                      //  PriceHistorylist.Add(Tuple.Create(productHistory.PriceHistory, product.Id));
 
 
 

@@ -1,4 +1,4 @@
-﻿@using RepositoryPatternPractice.Models.Business_Objet
+﻿@*@using RepositoryPatternPractice.Models.Business_Objet*@
 @model IEnumerable<Product_Table>
 
 @*@{
@@ -34,7 +34,7 @@
                     @Html.DisplayNameFor(categorymodel=>categorymodel.productCompany)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(categorymodel=>categorymodel.ProductHistory)
+                    @Html.DisplayNameFor(categorymodel=>categorymodel.PriceHistory)
                 </th>
                 <th>
                     Table Data Actions 
@@ -62,9 +62,11 @@
                     </td>
 
                    <td>
-                    @if(item.ProductHistory.Count>0){
+                        @if (item.PriceHistory.Count > 0)
+                        {
 
-                    @foreach(var it in item.ProductHistory){
+                            @foreach (var it in item.PriceHistory)
+                            {
                       <td>
                            @it
                       </td>

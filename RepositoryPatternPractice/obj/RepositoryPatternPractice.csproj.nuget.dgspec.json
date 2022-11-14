@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Gitstore\\Repository-Pattern-Practice\\RepositoryPatternPractice\\RepositoryPatternPractice.csproj": {}
+    "F:\\Repository-Pattern-Practice\\RepositoryPatternPractice\\RepositoryPatternPractice.csproj": {}
   },
   "projects": {
-    "D:\\Gitstore\\Repository-Pattern-Practice\\RepositoryPatternPractice\\RepositoryPatternPractice.csproj": {
+    "F:\\Repository-Pattern-Practice\\RepositoryPatternPractice\\RepositoryPatternPractice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Gitstore\\Repository-Pattern-Practice\\RepositoryPatternPractice\\RepositoryPatternPractice.csproj",
+        "projectUniqueName": "F:\\Repository-Pattern-Practice\\RepositoryPatternPractice\\RepositoryPatternPractice.csproj",
         "projectName": "RepositoryPatternPractice",
-        "projectPath": "D:\\Gitstore\\Repository-Pattern-Practice\\RepositoryPatternPractice\\RepositoryPatternPractice.csproj",
-        "packagesPath": "C:\\Users\\SECL\\.nuget\\packages\\",
-        "outputPath": "D:\\Gitstore\\Repository-Pattern-Practice\\RepositoryPatternPractice\\obj\\",
+        "projectPath": "F:\\Repository-Pattern-Practice\\RepositoryPatternPractice\\RepositoryPatternPractice.csproj",
+        "packagesPath": "C:\\Users\\shima\\.nuget\\packages\\",
+        "outputPath": "F:\\Repository-Pattern-Practice\\RepositoryPatternPractice\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SECL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\shima\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -84,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

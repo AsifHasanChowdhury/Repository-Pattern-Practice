@@ -14,8 +14,10 @@ namespace RepositoryPatternPractice.Models
 
         public int productCount { get; set; }
 
-        // public List <String> PriceHistory=new List<String>();
+        public List <String> PriceHistory=new List<String>();
 
-        public List<String> ProductHistory=new List<String>();
+        public List<int> PriceHistroyID = new List<int>();
+       //public List <Tuple<string, int>> PriceHistory = new List <Tuple<string,int>> ();
+
     }
 }

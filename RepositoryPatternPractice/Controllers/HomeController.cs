@@ -71,8 +71,9 @@ namespace RepositoryPatternPractice.Controllers
         public IActionResult GetProductHistory(int id)
         {
             //   return View(_productRepository.GetProductHistorybyId(id));
-            _productRepository.GetProductHistorybyId(id);
-            return RedirectToAction("Index");
+            //_productRepository.GetProductHistorybyId(id);
+            //return RedirectToAction("Index");
+            return View(_productRepository.GetProducts());
         }
 
 
