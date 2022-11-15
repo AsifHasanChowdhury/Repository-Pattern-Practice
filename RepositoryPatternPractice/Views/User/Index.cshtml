@@ -1,0 +1,77 @@
+﻿@model RepositoryPatternPractice.Models.Business_Objet.Users
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h4>Register Users</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index"> 
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="username" class="control-label"></label>
+                <input asp-for="username" class="form-control" />
+                <span asp-validation-for="username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="userEmail" class="control-label"></label>
+                <input asp-for="userEmail" class="form-control" />
+                <span asp-validation-for="userEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="password" class="control-label"></label>
+                <input asp-for="password" class="form-control" />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group row" style="margin-bottom:10px;">
+                <div class="col-5">
+                    <input type="radio" id="Admin"   name="rdUserRole" value="Admin User" chekced  />
+                    <label for="Admin">Admin User</label><br>
+
+
+                    <input type="radio" id="Service" name="rdUserRole" value="Service User" chekced />
+                    <label for="Service">Service User</label><br>
+
+                    <input type="radio" id="General" name="rdUserRole" value="General User" chekced />
+                    <label for="General">General User</label><br>
+
+                </div>
+            </div>
+         
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+
+            </form>
+    </div>
+    
+</div>
+
+            
+
+@*<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>*@
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

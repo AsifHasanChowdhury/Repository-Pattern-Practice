@@ -1,4 +1,4 @@
-﻿@model RepositoryPatternPractice.Models.Product_Table
+﻿@*@model RepositoryPatternPractice.Models.Product_Table
 
 @{
     ViewData["Title"] = "GetProductHistory";
@@ -25,7 +25,9 @@
             @Html.DisplayFor(model => model.productCompany)
         </dd>
 
-        @*@foreach(var item in Model.PriceHistory){
+        @*
+        
+        @foreach(var item in Model.PriceHistory){
 
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.PriceHistory)
@@ -33,7 +35,7 @@
         <dd class="col-sm-10">
             @item
         </dd>
-        }*@
+        }
         
         
     </dl>
@@ -42,3 +44,4 @@
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     <a asp-action="Index">Back to List</a>
 </div>
+*@

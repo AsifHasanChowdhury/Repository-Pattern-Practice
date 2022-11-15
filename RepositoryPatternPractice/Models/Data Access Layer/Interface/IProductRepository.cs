@@ -18,7 +18,7 @@
         void DeleteProduct(int ProductId);
 
 
-        Product_Table GetProductHistorybyId(int ProductId);
+        List <Product_Table> GetProductHistorybyId(int ProductId);
 
 
 

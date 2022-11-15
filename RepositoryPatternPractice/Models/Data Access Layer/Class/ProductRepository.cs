@@ -20,7 +20,7 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
       //  Product_Table product = new Product_Table();
 
         List<String> PriceHistoryList = new List<String>();
-
+        List<Product_Table> productlist;
         // List<String> PriceHistoryList2 = new List<String> { "2000", "4000"};
         // List<int> PriceHistroyIDTrack = new List<int>();
         // List<Tuple<string, int>> PriceHistorylist = new List<Tuple<string, int>>();
@@ -112,8 +112,8 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
 
         public List <Product_Table> GetProducts()
         {
-            List<Product_Table> productlist = new List<Product_Table>();
-
+            productlist = new List<Product_Table>();
+           
             try
             {
 
@@ -225,7 +225,7 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
 
 
 
-        public Product_Table GetProductHistorybyId(int ProductId)
+        public List<Product_Table> GetProductHistorybyId(int ProductId)
         {
 
             Product_Table product = new Product_Table();
@@ -266,7 +266,7 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
                         //product.productCompany = Convert.ToString(dt.Rows[i]["productCompany"]);
 
                         productHistory.PriceHistory = Convert.ToString(dt.Rows[i]["PriceHistory"]);
-                        product.Id = Convert.ToInt32(dt.Rows[i]["ProductId"]);
+                        //product.Id = Convert.ToInt32(dt.Rows[i]["ProductId"]);
 
                         //product.PriceHistory.Add(productHistory.PriceHistory);
                         PriceHistoryList.Add(productHistory.PriceHistory);
@@ -278,13 +278,24 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
 
                     }
                 }
+
+                if (productlist.Count > 0)
+                {
+                    for (int i = 0; i < productlist.Count; i++)
+                    {
+                        if (productlist[i].Id == Checkid)
+                        {
+                            productlist[i].PriceHistory = PriceHistoryList;
+                        }
+                    }
+                }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
 
-            return product;
+            return productlist;
 
 
         }

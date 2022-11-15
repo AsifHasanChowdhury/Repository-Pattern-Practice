@@ -8,57 +8,61 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RepositoryPatternPractice
 build_property.RootNamespace = RepositoryPatternPractice
-build_property.ProjectDir = F:\Repository-Pattern-Practice\RepositoryPatternPractice\
+build_property.ProjectDir = D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = F:\Repository-Pattern-Practice\RepositoryPatternPractice
+build_property.MSBuildProjectDirectory = D:\Gitstore\Repository-Pattern-Practice\RepositoryPatternPractice
 build_property._RazorSourceGeneratorDebug = 
 
-[F:/Repository-Pattern-Practice/RepositoryPatternPractice/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/Gitstore/Repository-Pattern-Practice/RepositoryPatternPractice/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Home/Create.cshtml]
+[D:/Gitstore/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Home/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Home/GetProductHistory.cshtml]
+[D:/Gitstore/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Home/GetProductHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRQcm9kdWN0SGlzdG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Home/Index.cshtml]
+[D:/Gitstore/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Home/Privacy.cshtml]
+[D:/Gitstore/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Home/Update.cshtml]
+[D:/Gitstore/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Home/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Shared/Error.cshtml]
+[D:/Gitstore/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Shared/_LoginPartial.cshtml]
+[D:/Gitstore/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Gitstore/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Repository-Pattern-Practice/RepositoryPatternPractice/Views/_ViewImports.cshtml]
+[D:/Gitstore/Repository-Pattern-Practice/RepositoryPatternPractice/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Gitstore/Repository-Pattern-Practice/RepositoryPatternPractice/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Repository-Pattern-Practice/RepositoryPatternPractice/Views/_ViewStart.cshtml]
+[D:/Gitstore/Repository-Pattern-Practice/RepositoryPatternPractice/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Shared/_Layout.cshtml]
+[D:/Gitstore/Repository-Pattern-Practice/RepositoryPatternPractice/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-63t1beytqa
