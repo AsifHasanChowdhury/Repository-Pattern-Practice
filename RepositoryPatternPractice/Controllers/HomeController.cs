@@ -71,10 +71,10 @@ namespace RepositoryPatternPractice.Controllers
         public IActionResult GetProductHistory(int id)
         {
             //   return View(_productRepository.GetProductHistorybyId(id));
-            //  _productRepository.GetProductHistorybyId(id); //working
+                 _productRepository.GetProductHistorybyId(id); //working
             //return RedirectToAction("Index");
-            //  return View("Index",_productRepository.GetProducts()); //working
-            return View("Index", _productRepository.GetProductHistorybyId(id));
+                  return View("Index",_productRepository.GetProducts()); //working
+            //return View("Index", _productRepository.GetProductHistorybyId(id)); //Not Working Discuss
 
          //  return RedirectToAction("Index", _productRepository.GetProducts());
         }

@@ -19,10 +19,35 @@ namespace RepositoryPatternPractice.Controllers
 
 
 
-        //Create Users Page
-        public IActionResult Index()
+        //Get Signup
+        public IActionResult Signup(Users user)
         {
-            return View(new Users());
+            //if (_UsersRepository.CreateUser(user)) {
+
+            //   return RedirectToAction("Index", "Home");
+            // }
+            //  return RedirectToAction("Index","Home");
+            if (user.username== null)
+            {
+                return View(new Users());
+            }
+            _UsersRepository.CreateUser(user);
+            return RedirectToAction("Index", "Home");
+
+        }
+
+
+       
+        public IActionResult Login(PersonLogin pl)
+        {
+            if(pl.email==null || pl.password == null)
+            {
+                return View(new PersonLogin());
+            } 
+            
+            _UsersRepository.login(pl);
+            return RedirectToAction("Index", "Home");
+
         }
     }
 }

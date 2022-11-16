@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-RepositoryPatternPractice-BC847080-BAD4-4BDB-A390-2D1349D948DC</UserSecretsId>
   </PropertyGroup>

@@ -230,8 +230,6 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
 
             Product_Table product = new Product_Table();
 
-           
-
             //List<ProductHistory> productHistorylist = new List<ProductHistory>();
 
             try
@@ -252,19 +250,13 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
                 if (dt.Rows.Count > 0)
                 {
                     Checkid = ProductId;
-                    // product.productName = Convert.ToString(dt.Rows["productName"]);
-                    //  product.productPrice = Convert.ToInt32(dt.Rows["productPrice"]);
-                    //  product.productCompany = Convert.ToString(dt.Rows["productCompany"]);
 
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
 
                         ProductHistory productHistory = new ProductHistory();
 
-                        //product.productName = Convert.ToString(dt.Rows[i]["productName"]);
-                        //product.productPrice = Convert.ToInt32(dt.Rows[i]["productPrice"]);
-                        //product.productCompany = Convert.ToString(dt.Rows[i]["productCompany"]);
-
+                       
                         productHistory.PriceHistory = Convert.ToString(dt.Rows[i]["PriceHistory"]);
                         //product.Id = Convert.ToInt32(dt.Rows[i]["ProductId"]);
 
@@ -279,16 +271,16 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
                     }
                 }
 
-                if (productlist.Count > 0)
-                {
-                    for (int i = 0; i < productlist.Count; i++)
-                    {
-                        if (productlist[i].Id == Checkid)
-                        {
-                            productlist[i].PriceHistory = PriceHistoryList;
-                        }
-                    }
-                }
+                //if (productlist.Count > 0)
+                //{
+                //    for (int i = 0; i < productlist.Count; i++)
+                //    {
+                //        if (productlist[i].Id == Checkid)
+                //        {
+                //            productlist[i].PriceHistory = PriceHistoryList;
+                //        }
+                //    }
+                //}
             }
             catch (Exception e)
             {
