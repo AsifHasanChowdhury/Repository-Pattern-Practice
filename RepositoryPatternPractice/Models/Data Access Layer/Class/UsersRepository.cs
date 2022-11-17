@@ -114,8 +114,7 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
             connection.Open();
 
             string loadInforamtion = "SELECT UserMapRole_Table.RoleID FROM UserMapRole_Table " +
-                "INNER JOIN User_Table ON (SELECT id FROM User_Table WHERE useremail="+ pl.email.ToString()+
-                ")=UserMapRole_Table.UserID";
+                "INNER JOIN User_Table ON (SELECT id FROM User_Table WHERE useremail='" + pl.email + "')=UserMapRole_Table.UserID";
 
 
             SqlCommand comm = new SqlCommand(loadInforamtion, connection);
