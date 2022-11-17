@@ -3,9 +3,13 @@ using RepositoryPatternPractice.Models;
 using RepositoryPatternPractice.Models.Data_Access_Layer.Class;
 using RepositoryPatternPractice.Models.Data_Access_Layer;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RepositoryPatternPractice.Controllers
 {
+
+    [Authorize(Roles ="AdminUser,ServiceUser,GeneralUser")]
+   
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

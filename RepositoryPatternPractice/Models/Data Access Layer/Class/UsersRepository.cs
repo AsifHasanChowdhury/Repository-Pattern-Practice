@@ -1,9 +1,16 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Data.SqlClient;
 using RepositoryPatternPractice.Models.Business_Objet;
 using RepositoryPatternPractice.Models.Data_Access_Layer.Interface;
 using System.Configuration;
 using System.Data;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using static Humanizer.In;
 
 namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
 {
@@ -35,7 +42,7 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
 
                 SqlCommand cmd = new SqlCommand("INSERT INTO [User_Table] VALUES(@UserName," +
 
-                                "@UserEmail,@UserPassword)", connection);
+                "@UserEmail,@UserPassword)", connection);
 
 
 
@@ -48,7 +55,8 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
 
                 //Fetching Data
 
-                string loadInforamtion = "SELECT id FROM User_Table";
+                string loadInforamtion = "SELECT id FROM User_Table WHERE useremail='" + user.userEmail + "'";
+
                 SqlCommand comm = new SqlCommand(loadInforamtion, connection);
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(comm);
                 DataTable dt = new DataTable();
@@ -84,7 +92,7 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
 
                 cmd = new SqlCommand("INSERT INTO [UserMapRole_Table] VALUES(@UserID," +
 
-                                "@RoleID)", connection);
+                "@RoleID)", connection);
 
 
                 cmd.Parameters.AddWithValue("@UserID",users.id);
@@ -104,7 +112,9 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
         }
 
 
-        public Boolean login(PersonLogin pl)
+
+
+        public String loginAsync(PersonLogin pl)
         {
 
 
@@ -112,27 +122,33 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
             .GetConnectionString("DefaultConnection").ToString());
 
             connection.Open();
-
-            string loadInforamtion = "SELECT UserMapRole_Table.RoleID FROM UserMapRole_Table " +
-                "INNER JOIN User_Table ON (SELECT id FROM User_Table WHERE useremail='" + pl.email + "')=UserMapRole_Table.UserID";
+            
+            
+         //Give Role For User Email
+          string loadInforamtion = "SELECT RoleName FROM RoleTable WHERE RoleID IN (SELECT RoleID FROM UserMapRole_Table " +
+          "INNER JOIN User_Table ON (SELECT id FROM User_Table WHERE useremail='" + pl.email + "')=UserMapRole_Table.UserID)";
 
 
             SqlCommand comm = new SqlCommand(loadInforamtion, connection);
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(comm);
             DataTable dt = new DataTable();
             sqlDataAdapter.Fill(dt);
-            int RoleID = 0;
+            String RoleName="NoRole";
 
             if (dt.Rows.Count > 0)
             {
-                RoleID = Convert.ToInt32(dt.Rows[0]["UserMapRole_Table.RoleID"]);
+                RoleName = Convert.ToString(dt.Rows[0]["RoleName"]);
             }
 
-
-            return false; 
+            return RoleName; 
         
         }
 
+
+        public void SignOut()
+        {
+
+        }
 
 
         public void ProvideRole(Users user) { }
