@@ -1,8 +1,14 @@
+using Hangfire;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using RepositoryPatternPractice.Data;
+using System.Security.Claims;
+using System.Web.Mvc;
+using System.Web.Optimization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +21,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+        .AddEntityFrameworkStores<ApplicationDbContext>();
+//builder.Services.AddIdentityCore<ClaimsIdentity>(new Claim());
+//builder.Services.AddDefaultIdentity<ClaimsIdentity>(new ClaimsIdentity());
+//builder.Services.AddTransient<ClaimsIdentity>(new Claim());
+
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -29,6 +39,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
     });
 
+//builder.Services.AddIdentityCore();
 
 var app = builder.Build();
 
@@ -47,11 +58,13 @@ else
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+
 app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseCookiePolicy();
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

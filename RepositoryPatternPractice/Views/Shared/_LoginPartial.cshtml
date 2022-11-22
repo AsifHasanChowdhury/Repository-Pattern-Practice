@@ -1,21 +1,27 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
-@inject ClaimsIdentityOptions claim
+
 
 <ul class="navbar-nav">
 @*@if (SignInManager.IsSignedIn(User))
 {*@
- @if (claim.RoleClaimType=="AdminUser"){
-    @*<li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
-    </li>*@
-    <li class="nav-item">
+@*
+    @if (@User. == @RepositoryPatternPractice.Static_Details.StaticDetails.SuperAdmin)
+    {*@
+
+    @if (@User.IsInRole(@RepositoryPatternPractice.Static_Details.StaticDetails.SuperAdmin))
+     {
+        <li class="nav-item">
+            <a  class="nav-link text-dark" asp-area="Views" asp-page="/Views/Home/Index" title="Manage">Hello Asif</a>
+        </li>
+    }
+@*    <li class="nav-item">
         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
             <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
         </form>
     </li>
-}
+}*@
 
 else
 {

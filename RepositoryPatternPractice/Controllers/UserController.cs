@@ -63,7 +63,7 @@ namespace RepositoryPatternPractice.Controllers
                     //AllowRefresh = <bool>,
                     // Refreshing the authentication session should be allowed.
 
-                    ExpiresUtc = DateTimeOffset.UtcNow.AddSeconds(10),
+                    ExpiresUtc = DateTimeOffset.UtcNow.AddSeconds(5000000),
                     // The time at which the authentication ticket expires. A 
                     // value set here overrides the ExpireTimeSpan option of 
                     // CookieAuthenticationOptions set with AddCookie.
