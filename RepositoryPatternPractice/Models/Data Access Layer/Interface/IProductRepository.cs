@@ -20,6 +20,8 @@
 
         List <Product_Table> GetProductHistorybyId(int ProductId);
 
+        public List<string> GetFormField();
+
 
 
 

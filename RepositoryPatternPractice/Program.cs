@@ -9,6 +9,9 @@ using RepositoryPatternPractice.Data;
 using System.Security.Claims;
 using System.Web.Mvc;
 using System.Web.Optimization;
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,7 +42,21 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
     });
 
+
+
+//builder.Services.AddControllersWithViews(options => {
+//    options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+//})
+//    .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+//    .AddJsonOptions(options => {
+//        options.JsonSerializerOptions. = Formatting.Indented;
+//    });
 //builder.Services.AddIdentityCore();
+//builder.Services.AddMvc().AddJsonOptions(
+//        options => options.JsonSerializerOptions..ReferenceLoopHandling =
+//        Newtonsoft.Json.ReferenceLoopHandling.Ignore
+//    );
+
 
 var app = builder.Build();
 
@@ -68,6 +85,7 @@ app.UseCookiePolicy();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+ 
 app.MapRazorPages();
 
 app.Run();

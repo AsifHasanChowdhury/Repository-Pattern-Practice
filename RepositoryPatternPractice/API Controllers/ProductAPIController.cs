@@ -5,6 +5,7 @@ using RepositoryPatternPractice.Models;
 using RepositoryPatternPractice.Models.Data_Access_Layer;
 using RepositoryPatternPractice.Models.Data_Access_Layer.Class;
 using System.Security.Policy;
+using System.Text;
 
 namespace RepositoryPatternPractice.API_Controllers
 {
@@ -23,6 +24,8 @@ namespace RepositoryPatternPractice.API_Controllers
             _productRepository = new ProductRepository(configuration);
            // _httpClient.BaseAddress = baseAddress;
         }
+
+
         [HttpGet]
         [Route("AllProduct")]
         public string Index()
@@ -42,5 +45,25 @@ namespace RepositoryPatternPractice.API_Controllers
             return json;
 
         }
+
+
+        //[HttpGet]
+        //[Route("AllProductField")]
+        //public String GetProductFieldFromDB()
+        //{
+           
+        //  var json = JsonSerializer(_productRepository.GetFormField);
+
+        //   return json;
+        //}
+
+
+
+
+
+
+
     }
+
+
 }

@@ -27,6 +27,7 @@ namespace RepositoryPatternPractice.Controllers
         public IActionResult Index()
 
         {
+            _productRepository.GetFormField();
             return View(_productRepository.GetProducts());
         }
 

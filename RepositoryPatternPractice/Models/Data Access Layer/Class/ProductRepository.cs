@@ -6,6 +6,7 @@ using NuGet.Protocol.Plugins;
 using RepositoryPatternPractice.Models.Business_Objet;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Net.Mail;
 using System.Security.Policy;
 using static Humanizer.In;
@@ -164,7 +165,6 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
 
         }
 
-
         public void UpdateProduct(Product_Table product_)
         {
 
@@ -289,7 +289,39 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
 
             return productlist;
 
+        }
 
+
+
+    public List<string> GetFormField()
+    {
+
+            SqlConnection connection = new SqlConnection(Configuration
+                   .GetConnectionString("DefaultConnection").ToString());
+
+            connection.Open();
+
+            string loadInforamtion = "SELECT * FROM Product_Table";
+            SqlCommand comm = new SqlCommand(loadInforamtion, connection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(comm);
+            DataTable dt = new DataTable();
+            sqlDataAdapter.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+            {
+                List<string> FieldList = dt.Columns
+                                           .Cast<DataColumn>()
+                                           .Select(c => c.ColumnName)
+                                           .ToList();
+                for(int i=0; i<FieldList.Count(); i++)
+                {
+                   Debug.WriteLine(FieldList[i]);
+                }
+                return FieldList;
+            }
+
+            return null;
+            
         }
 
 
