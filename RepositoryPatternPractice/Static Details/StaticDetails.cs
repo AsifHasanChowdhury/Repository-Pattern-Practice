@@ -1,10 +1,12 @@
 ﻿namespace RepositoryPatternPractice.Static_Details
 {
-    public class StaticDetails
+    public static class StaticDetails
     {
 
         public const string Manager = "Manager";
         public const string SuperAdmin = "AdminUser";
         public const string GeneralUser = "GeneralUser";
+
+        public static List <string> DbcolumList=new List <string> ();
     }
 }

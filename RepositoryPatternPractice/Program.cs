@@ -18,6 +18,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
@@ -43,7 +46,14 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     });
 
 
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("*");
+                      });
+});
 //builder.Services.AddControllersWithViews(options => {
 //    options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
 //})
@@ -71,7 +81,7 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
+app.UseCors(MyAllowSpecificOrigins);
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

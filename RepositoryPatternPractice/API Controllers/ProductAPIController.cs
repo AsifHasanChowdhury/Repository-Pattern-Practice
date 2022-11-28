@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RepositoryPatternPractice.Models;
 using RepositoryPatternPractice.Models.Data_Access_Layer;
 using RepositoryPatternPractice.Models.Data_Access_Layer.Class;
 using System.Security.Policy;
 using System.Text;
+using System.Web.Helpers;
 
 namespace RepositoryPatternPractice.API_Controllers
 {
@@ -47,17 +49,21 @@ namespace RepositoryPatternPractice.API_Controllers
         }
 
 
-        //[HttpGet]
-        //[Route("AllProductField")]
-        //public String GetProductFieldFromDB()
-        //{
-           
-        //  var json = JsonSerializer(_productRepository.GetFormField);
+        [HttpGet]
+        [Route("allproductfield")]
+        public string getproductfieldfromdb()
+        {
 
-        //   return json;
-        //}
+            var json = JsonConvert.SerializeObject(_productRepository.GetFormField());
+            return json;
+        }
 
+        [HttpPost]
+        [Route ("StoreProduct")]
+        public void CreateProduct([FromBody]JObject List)
+        {
 
+        }
 
 
 

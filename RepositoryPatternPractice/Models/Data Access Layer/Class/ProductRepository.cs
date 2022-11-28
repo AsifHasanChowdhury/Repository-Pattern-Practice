@@ -44,7 +44,7 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
 
                 SqlCommand cmd = new SqlCommand("INSERT INTO [Product_Table] VALUES(@productName,@productPrice," +
 
-                                                                        "@productCompany,@productCount)", connection);
+                                                "@productCompany,@productCount)", connection);
 
                 cmd.Parameters.AddWithValue("@productName", product_.productName);
                 cmd.Parameters.AddWithValue("@productCompany", product_.productCompany);
@@ -309,20 +309,26 @@ namespace RepositoryPatternPractice.Models.Data_Access_Layer.Class
 
             if (dt.Rows.Count > 0)
             {
-                List<string> FieldList = dt.Columns
+
+                Static_Details.StaticDetails.DbcolumList = dt.Columns
                                            .Cast<DataColumn>()
                                            .Select(c => c.ColumnName)
                                            .ToList();
-                for(int i=0; i<FieldList.Count(); i++)
+
+                for(int i=0; i< Static_Details.StaticDetails.DbcolumList.Count(); i++)
                 {
-                   Debug.WriteLine(FieldList[i]);
+                   Debug.WriteLine(Static_Details.StaticDetails.DbcolumList[i]);
                 }
-                return FieldList;
+                return Static_Details.StaticDetails.DbcolumList;
             }
 
             return null;
             
         }
+
+
+
+        
 
 
 
