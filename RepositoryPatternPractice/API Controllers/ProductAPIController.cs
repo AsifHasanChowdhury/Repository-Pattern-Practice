@@ -60,7 +60,7 @@ namespace RepositoryPatternPractice.API_Controllers
 
         [HttpPost]
         [Route ("StoreProduct")]
-        public void CreateProduct([FromBody]JObject List)
+        public void CreateProduct([FromBody] Object json)
         {
 
         }

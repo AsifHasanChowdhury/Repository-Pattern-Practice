@@ -52,8 +52,12 @@ builder.Services.AddCors(options =>
                       policy =>
                       {
                           policy.WithOrigins("*");
+                          policy.AllowAnyHeader();
+                          
                       });
+    
 });
+
 //builder.Services.AddControllersWithViews(options => {
 //    options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
 //})
@@ -81,12 +85,12 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-app.UseCors(MyAllowSpecificOrigins);
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-
 app.UseRouting();
+
 
 app.UseAuthentication();
 app.UseAuthorization();
@@ -97,5 +101,5 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
  
 app.MapRazorPages();
-
+app.UseCors(MyAllowSpecificOrigins);
 app.Run();

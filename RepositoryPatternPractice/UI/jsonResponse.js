@@ -1,4 +1,6 @@
 const apiUrl="https://localhost:44396/api/ProductAPI/AllProductField"; 
+const receiveUrl="https://localhost:44396/api/ProductAPI/StoreProduct";
+
     async function fetchPost(){
         try{
         const response= await fetch(`${apiUrl}`);
@@ -12,13 +14,14 @@ const apiUrl="https://localhost:44396/api/ProductAPI/AllProductField";
         }
     }
 
+
     async function returnResponse(){
         console.log(fetchPost);
     }
 
 
     function listPosts(postContainerElementId){
-            console.log("hello");
+            
 
         const postContainerElement= document.getElementById(postContainerElementId);
         if(!postContainerElement){
@@ -32,12 +35,13 @@ const apiUrl="https://localhost:44396/api/ProductAPI/AllProductField";
                 postContainerElement.innerHTML="No posts";
                 return;
             }
+            
             for (var i=1; i<posts.length;i++){
 
                 postContainerElement.appendChild(postElement(posts[i]));
                 
             }
-            
+            //buttonCreationCanbeDynamic
             var button=document.createElement("button");
             var text=document.createTextNode("Submit");
             button.appendChild(button.appendChild(text));
@@ -56,6 +60,8 @@ const apiUrl="https://localhost:44396/api/ProductAPI/AllProductField";
         inputField.setAttribute("type", "text");
         inputField.setAttribute("placeholder", String(post));
         inputField.setAttribute("id",String(post));
+        inputField.setAttribute("Name", String(post));
+
 
         inputField.style.marginBottom="20px";
         inputField.style.marginLeft="20px";
@@ -63,6 +69,8 @@ const apiUrl="https://localhost:44396/api/ProductAPI/AllProductField";
         var newlabel = document.createElement("Label");
         newlabel.setAttribute("for",inputField.id);
         newlabel.innerHTML = inputField.id;
+
+
 
         var linebreak=document.createElement("BR");
 
@@ -72,3 +80,40 @@ const apiUrl="https://localhost:44396/api/ProductAPI/AllProductField";
         return newlabel;
 
     }
+
+
+
+    
+    function handleSubmit(event) {
+        event.preventDefault();
+    
+        const data = new FormData(event.target);
+    
+        const value = Object.fromEntries(data.entries());
+    
+        console.log({ value });
+
+         var datas = {};
+         datas.portfolioId = '200';
+         datas.nodedates = '2000';
+    
+
+
+        $.ajax({
+            type: "POST",
+            url: "https://localhost:44396/api/ProductAPI/StoreProduct",
+            dataType: "json",
+            data: JSON.stringify(value),
+            contentType: "application/json; charset=utf-8",
+
+            
+           
+            error: function (error) {
+                    alert("Didn't Work");
+            }
+    });
+
+      }
+    
+      const form = document.querySelector('form');
+      form.addEventListener('submit', handleSubmit);
