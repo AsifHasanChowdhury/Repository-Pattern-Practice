@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Hangfire.Storage;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RepositoryPatternPractice.Models;
 using RepositoryPatternPractice.Models.Data_Access_Layer;
 using RepositoryPatternPractice.Models.Data_Access_Layer.Class;
+using RepositoryPatternPractice.Static_Details;
+using System.Diagnostics;
 using System.Security.Policy;
 using System.Text;
 using System.Web.Helpers;
@@ -62,6 +65,20 @@ namespace RepositoryPatternPractice.API_Controllers
         [Route ("StoreProduct")]
         public void CreateProduct([FromBody] Object json)
         {
+            var dynamicObject = JsonConvert.DeserializeObject<Object>(json.ToString());
+            
+            var keyValuePairs = JObject.Parse(dynamicObject.ToString());
+
+            foreach(var item in StaticDetails.DbcolumList)
+            {
+                //var value= keyValuePairs.Value(item);
+                //var value= keyValuePairs[item];
+                //var value = keyValuePairs.GetValue(item);
+                //var value = keyValuePairs.SelectToken(item);
+                var value = keyValuePairs.Value<String>(item);
+                //Debug.WriteLine(value);
+
+            }
 
         }
 

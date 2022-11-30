@@ -87,15 +87,15 @@ const receiveUrl="https://localhost:44396/api/ProductAPI/StoreProduct";
     function handleSubmit(event) {
         event.preventDefault();
     
-        const data = new FormData(event.target);
+        const data = new FormData(event.target); //catching form data
     
-        const value = Object.fromEntries(data.entries());
+        const value = Object.fromEntries(data.entries()); //json format
     
         console.log({ value });
 
-         var datas = {};
-         datas.portfolioId = '200';
-         datas.nodedates = '2000';
+        //  var datas = {};
+        //  datas.portfolioId = '200';
+        //  datas.nodedates = '2000';
     
 
 
