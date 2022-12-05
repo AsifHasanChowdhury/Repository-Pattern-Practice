@@ -4,6 +4,9 @@ using RepositoryPatternPractice.Models.Data_Access_Layer.Class;
 using RepositoryPatternPractice.Models.Data_Access_Layer;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Authorization;
+using RepositoryPatternPractice.API_Repository;
+using RepositoryPatternPractice.Models.Business_Objet;
+using System.Text.RegularExpressions;
 
 namespace RepositoryPatternPractice.Controllers
 {
@@ -27,7 +30,6 @@ namespace RepositoryPatternPractice.Controllers
         public IActionResult Index()
 
         {
-            
             return View(_productRepository.GetProducts());
         }
 
@@ -83,6 +85,21 @@ namespace RepositoryPatternPractice.Controllers
 
          //  return RedirectToAction("Index", _productRepository.GetProducts());
         }
+
+
+        public IActionResult GetLogReport()
+        {
+            LogReport logReport = new LogReport();
+
+            LogJsonResponse logJsonResponse = new LogJsonResponse();
+
+            logJsonResponse.MappedPage=logReport.ReadLog();
+
+          
+            return View(logJsonResponse);
+        }
+
+
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

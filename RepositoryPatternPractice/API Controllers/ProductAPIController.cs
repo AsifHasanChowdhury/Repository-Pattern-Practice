@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using RepositoryPatternPractice.API_Repository;
 using RepositoryPatternPractice.Models;
 using RepositoryPatternPractice.Models.Data_Access_Layer;
 using RepositoryPatternPractice.Models.Data_Access_Layer.Class;
@@ -10,6 +11,7 @@ using RepositoryPatternPractice.Static_Details;
 using System.Diagnostics;
 using System.Security.Policy;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web.Helpers;
 
 namespace RepositoryPatternPractice.API_Controllers
@@ -35,7 +37,7 @@ namespace RepositoryPatternPractice.API_Controllers
         [Route("AllProduct")]
         public string Index()
         {
-            List<Product_Table> productList = new List<Product_Table>();
+            //List<Product_Table> productList = new List<Product_Table>();
             string json = "";
            
                 
@@ -61,6 +63,8 @@ namespace RepositoryPatternPractice.API_Controllers
             return json;
         }
 
+
+
         [HttpPost]
         [Route ("StoreProduct")]
         public void CreateProduct([FromBody] Object json)
@@ -82,6 +86,27 @@ namespace RepositoryPatternPractice.API_Controllers
 
         }
 
+
+        [HttpGet]
+        [Route("LogReport")]
+
+        public string LogReport()
+        {
+            
+            LogReport logReport = new LogReport();
+            
+            //var json = JsonConvert.SerializeObject(logReport.ReadLog());
+            //return json;
+            //return null;
+
+            var jsonSerializerSettings = new JsonSerializerSettings
+            {
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects
+            };
+
+            string jsonStr = Newtonsoft.Json.JsonConvert.SerializeObject(logReport.ReadLog(), jsonSerializerSettings);
+            return jsonStr;
+        }
 
 
 

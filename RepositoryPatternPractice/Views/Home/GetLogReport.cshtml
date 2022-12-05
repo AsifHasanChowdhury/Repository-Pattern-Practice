@@ -1,0 +1,73 @@
+﻿@model RepositoryPatternPractice.Models.Business_Objet.LogJsonResponse
+
+
+@*@using RepositoryPatternPractice.Models.Business_Objet
+@model IEnumerable<LogJsonResponse>*@
+
+@{
+    ViewData["Title"] = "GetLogReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>GetLogReport</h1>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<div>
+    <h4>LogJsonResponse</h4>
+    <hr />
+
+    @if(Model.MappedPage.Count()>0){
+        <h1> Total Number of Users @Model.MappedPage.Count()</h1>
+    <table>
+        @foreach(var item in Model.MappedPage){
+           <tr>
+
+                <td> @item.Key</td>
+
+           @foreach(var listval in item.Value){
+
+              <td>=></td><td>@listval </td>
+      
+           }
+           </tr>
+        }
+    </table>
+    }
+
+
+    @*@if (Model.Count() > 0)
+    {
+        @foreach (var item in Model)
+        {
+            <tr>
+                foreach(var key in item.Keys)
+                {
+                <td>item[key]</td>
+                }
+            </tr>
+        }*@
+        @*@if(Model.MappedPage.Count()>0){
+        <h1>Hello</h1>
+        }*@
+
+   
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

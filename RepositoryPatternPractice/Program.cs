@@ -12,6 +12,7 @@ using System.Web.Optimization;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc;
+using NuGet.Protocol;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -57,6 +58,11 @@ builder.Services.AddCors(options =>
                       });
     
 });
+
+
+
+
+
 
 //builder.Services.AddControllersWithViews(options => {
 //    options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());

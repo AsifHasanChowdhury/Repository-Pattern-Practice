@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table class="table table-striped">
+        <tr  class="bg-info">
+            <th>User Id</th>
+            <th>UserPage Visit</th>
+            
+        </tr>
+    
+        <tbody id="myTable">
+            
+        </tbody>
+    </table>
+    
+   
+</body>
+<script>
+    var myArray=[{"$id":"1","lid:74182761":[{"$id":"2","Groups":{"0":{"$ref":"2"}},"Success":true,"Name":"0","Captures":[{"$ref":"2"}],"Index":101,"Length":13,"Value":"pageName:home"},{"$id":"3","Groups":{"0":{"$ref":"3"}},"Success":true,"Name":"0","Captures":[{"$ref":"3"}],"Index":101,"Length":13,"Value":"pageName:home"}],"lid:84182761":[{"$id":"4","Groups":{"0":{"$ref":"4"}},"Success":true,"Name":"0","Captures":[{"$ref":"4"}],"Index":101,"Length":13,"Value":"pageName:home"},{"$id":"5","Groups":{"0":{"$ref":"5"}},"Success":true,"Name":"0","Captures":[{"$ref":"5"}],"Index":101,"Length":19,"Value":"pageName:managemenu"},{"$id":"6","Groups":{"0":{"$ref":"6"}},"Success":true,"Name":"0","Captures":[{"$ref":"6"}],"Index":101,"Length":19,"Value":"pageName:managemenu"},{"$id":"7","Groups":{"0":{"$ref":"7"}},"Success":true,"Name":"0","Captures":[{"$ref":"7"}],"Index":101,"Length":19,"Value":"pageName:managemenu"},{"$id":"8","Groups":{"0":{"$ref":"8"}},"Success":true,"Name":"0","Captures":[{"$ref":"8"}],"Index":101,"Length":13,"Value":"pageName:home"},{"$id":"9","Groups":{"0":{"$ref":"9"}},"Success":true,"Name":"0","Captures":[{"$ref":"9"}],"Index":101,"Length":19,"Value":"pageName:managemenu"},{"$id":"10","Groups":{"0":{"$ref":"10"}},"Success":true,"Name":"0","Captures":[{"$ref":"10"}],"Index":101,"Length":19,"Value":"pageName:managemenu"},{"$id":"11","Groups":{"0":{"$ref":"11"}},"Success":true,"Name":"0","Captures":[{"$ref":"11"}],"Index":101,"Length":19,"Value":"pageName:managemenu"}],"lid:48588611":[{"$id":"12","Groups":{"0":{"$ref":"12"}},"Success":true,"Name":"0","Captures":[{"$ref":"12"}],"Index":101,"Length":13,"Value":"pageName:home"},{"$id":"13","Groups":{"0":{"$ref":"13"}},"Success":true,"Name":"0","Captures":[{"$ref":"13"}],"Index":101,"Length":13,"Value":"pageName:home"},{"$id":"14","Groups":{"0":{"$ref":"14"}},"Success":true,"Name":"0","Captures":[{"$ref":"14"}],"Index":101,"Length":23,"Value":"pageName:applyforpermit"},{"$id":"15","Groups":{"0":{"$ref":"15"}},"Success":true,"Name":"0","Captures":[{"$ref":"15"}],"Index":101,"Length":19,"Value":"pageName:managemenu"},{"$id":"16","Groups":{"0":{"$ref":"16"}},"Success":true,"Name":"0","Captures":[{"$ref":"16"}],"Index":101,"Length":13,"Value":"pageName:home"},{"$id":"17","Groups":{"0":{"$ref":"17"}},"Success":true,"Name":"0","Captures":[{"$ref":"17"}],"Index":101,"Length":13,"Value":"pageName:home"},{"$id":"18","Groups":{"0":{"$ref":"18"}},"Success":true,"Name":"0","Captures":[{"$ref":"18"}],"Index":101,"Length":23,"Value":"pageName:applyforpermit"},{"$id":"19","Groups":{"0":{"$ref":"19"}},"Success":true,"Name":"0","Captures":[{"$ref":"19"}],"Index":101,"Length":19,"Value":"pageName:managemenu"}],"lid:47695181":[{"$id":"20","Groups":{"0":{"$ref":"20"}},"Success":true,"Name":"0","Captures":[{"$ref":"20"}],"Index":101,"Length":19,"Value":"pageName:managemenu"},{"$id":"21","Groups":{"0":{"$ref":"21"}},"Success":true,"Name":"0","Captures":[{"$ref":"21"}],"Index":101,"Length":19,"Value":"pageName:managemenu"},{"$id":"22","Groups":{"0":{"$ref":"22"}},"Success":true,"Name":"0","Captures":[{"$ref":"22"}],"Index":101,"Length":19,"Value":"pageName:managemenu"},{"$id":"23","Groups":{"0":{"$ref":"23"}},"Success":true,"Name":"0","Captures":[{"$ref":"23"}],"Index":101,"Length":19,"Value":"pageName:managemenu"},{"$id":"24","Groups":{"0":{"$ref":"24"}},"Success":true,"Name":"0","Captures":[{"$ref":"24"}],"Index":101,"Length":19,"Value":"pageName:managemenu"},{"$id":"25","Groups":{"0":{"$ref":"25"}},"Success":true,"Name":"0","Captures":[{"$ref":"25"}],"Index":101,"Length":19,"Value":"pageName:managemenu"}]}];
+    var Imp=myArray;
+    buildTable(Imp);
+
+
+
+    function buildTable(data){
+        var table = document.getElementById('myTable')
+
+        for (var i = 0; i < data.length; i++){
+            var row = `<tr>
+                        <td>${JSON.stringify(data[i].$id[1])} </td>
+                      </tr>`
+            table.innerHTML += row
+        }
+    }
+
+</script>
+</html>
