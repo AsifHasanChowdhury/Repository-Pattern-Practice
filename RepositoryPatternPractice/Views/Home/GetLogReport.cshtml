@@ -38,12 +38,16 @@
            <tr>
 
                 <td> @item.Key</td>
-
+                <td>
            @foreach(var listval in item.Value){
-
-              <td>=></td><td>@listval </td>
-      
-           }
+              @*<td>=></td>*@
+              <table>
+                  <tr>
+                                <td>@listval </td>
+                  </tr>
+              </table>
+           }    
+           </td>
            </tr>
         }
     </table>

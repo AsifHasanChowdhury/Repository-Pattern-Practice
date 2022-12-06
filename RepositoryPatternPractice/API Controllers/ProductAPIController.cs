@@ -20,7 +20,7 @@ namespace RepositoryPatternPractice.API_Controllers
     [ApiController]
     public class ProductAPIController : ControllerBase
     {
-
+        
         private IProductRepository _productRepository;
 
         // Uri baseAddress = new Uri("http://localhost:44396/productApi");
@@ -31,7 +31,7 @@ namespace RepositoryPatternPractice.API_Controllers
             _productRepository = new ProductRepository(configuration);
            // _httpClient.BaseAddress = baseAddress;
         }
-
+        static String dynamicObject = "";
 
         [HttpGet]
         [Route("AllProduct")]
@@ -69,25 +69,46 @@ namespace RepositoryPatternPractice.API_Controllers
         [Route ("StoreProduct")]
         public void CreateProduct([FromBody] Object json)
         {
-            var dynamicObject = JsonConvert.DeserializeObject<Object>(json.ToString());
-            
+
+
+            var  dynamicS = JsonConvert.DeserializeObject<Object>(json.ToString());
+            dynamicObject = dynamicS.ToString();
             var keyValuePairs = JObject.Parse(dynamicObject.ToString());
 
-            foreach(var item in StaticDetails.DbcolumList)
-            {
-                //var value= keyValuePairs.Value(item);
-                //var value= keyValuePairs[item];
-                //var value = keyValuePairs.GetValue(item);
-                //var value = keyValuePairs.SelectToken(item);
-                var value = keyValuePairs.Value<String>(item);
-                //Debug.WriteLine(value);
 
-            }
+
+            //foreach(var item in StaticDetails.DbcolumList)
+            //{
+            //    //var value= keyValuePairs.Value(item);
+            //    //var value= keyValuePairs[item];
+            //    //var value = keyValuePairs.GetValue(item);
+            //    //var value = keyValuePairs.SelectToken(item);
+            //    var value = keyValuePairs.Value<String>(item);
+            //    //Debug.WriteLine(value);
+
+            //}
 
         }
 
-
         [HttpGet]
+        [Route("HtmlForm")]
+
+        public string HtmlReport()
+        {
+            return dynamicObject.ToString();    
+        }
+
+
+
+
+
+
+
+
+
+
+
+            [HttpGet]
         [Route("LogReport")]
 
         public string LogReport()
