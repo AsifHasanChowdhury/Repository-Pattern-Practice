@@ -108,7 +108,7 @@ namespace RepositoryPatternPractice.API_Controllers
 
 
 
-            [HttpGet]
+        [HttpGet]
         [Route("LogReport")]
 
         public string LogReport()
