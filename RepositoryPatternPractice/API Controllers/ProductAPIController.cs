@@ -22,6 +22,7 @@ namespace RepositoryPatternPractice.API_Controllers
     {
         
         private IProductRepository _productRepository;
+        private FormJsonRepository FormJsonRepository;
 
         // Uri baseAddress = new Uri("http://localhost:44396/productApi");
         //HttpClient _httpClient;    
@@ -29,6 +30,7 @@ namespace RepositoryPatternPractice.API_Controllers
         public ProductAPIController(IConfiguration configuration)
         {
             _productRepository = new ProductRepository(configuration);
+            FormJsonRepository= new FormJsonRepository(configuration);
            // _httpClient.BaseAddress = baseAddress;
         }
         static String dynamicObject = "";
@@ -100,14 +102,6 @@ namespace RepositoryPatternPractice.API_Controllers
 
 
 
-
-
-
-
-
-
-
-
         [HttpGet]
         [Route("LogReport")]
 
@@ -130,6 +124,14 @@ namespace RepositoryPatternPractice.API_Controllers
         }
 
 
+        [HttpGet]
+        [Route("SendFormModule")]
+        public string SendFormAngularApp()
+        {
+            var FormJsonFormat = JsonConvert.SerializeObject(FormJsonRepository.FormRepository());
+          
+            return FormJsonFormat; 
+        }
 
 
     }
